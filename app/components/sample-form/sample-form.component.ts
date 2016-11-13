@@ -3,16 +3,7 @@ import {Component, OnInit} from '@angular/core';
 import {SampleUserFormModel} from './../../form_models/sample/sample-user.form-model';
 import {Country} from './../../object_models/sample/country.object-model';
 
-/**
- * Transfer to a service
- */
-const COUNTRIES: Country[] = [
-    { id: 1 , name : 'Australia'},
-    { id: 2 , name : 'USA'}
-]
-/**
- * END
- */
+import { SampleService } from './../../services/sampleService.service';
 
 @Component({
     moduleId: module.id,
@@ -29,20 +20,24 @@ export class SampleFormComponent implements OnInit{
     public countries:Country[] = [];
     
     constructor(
+        private sampleService:SampleService
     ){}
 
     ngOnInit():void{
-        //get countries on initialize
-        this.countries = this.getCountries();
+        //trigger function for updating countries list from API
+        this.getCountries();
     }
 
     public onSubmit(){
         console.log(this.formModel);
     }
 
-    public getCountries():Country[]{
+    public getCountries():void{
         //will change to a service with HTTP API call
-        return COUNTRIES;
+        this.sampleService.getCountries().then(
+            result=> this.countries = result,
+            (reason)=>console.log("ERROR : ", reason)
+        );
     }
 
     public resetForm(){

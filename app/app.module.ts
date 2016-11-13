@@ -26,6 +26,12 @@ import { SampleFormComponent } from './components/sample-form/sample-form.compon
  * Providers
 */
 
+/*services*/
+import { SampleService } from './services/sampleService.service';
+
+/*daos*/
+import { CountryApi } from './providers/api/studylane-api/impl/country.api';
+
 @NgModule({
     imports: [ 
       BrowserModule,
@@ -42,7 +48,13 @@ import { SampleFormComponent } from './components/sample-form/sample-form.compon
       DashboardComponent,      
       SampleFormComponent
     ],
-    providers: [  ],
+    providers: [
+      //services 
+      SampleService,
+
+      //dao
+      CountryApi
+     ],
     bootstrap: [ AppComponent ]
 })
 
