@@ -15,10 +15,12 @@ import { AppRoutingModule } from './app-routing.module';
  * Components
 */
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { AppHeaderComponent } from './components/app-header/app-header.component';
+import { AppFooterComponent } from './components/app-footer/app-footer.component';
+import { AppNavigatorComponent } from './components/app-navigator/app-navigator.component';
 
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SampleFormComponent } from './components/sample-form/sample-form.component';
 
 /** 
  * Providers
@@ -32,10 +34,13 @@ import { FooterComponent } from './components/footer/footer.component';
       AppRoutingModule
     ],
     declarations: [ 
-      AppComponent, 
-      DashboardComponent, 
-      HeaderComponent, 
-      FooterComponent
+      AppComponent,  
+      AppHeaderComponent, 
+      AppFooterComponent,
+      AppNavigatorComponent,
+
+      DashboardComponent,      
+      SampleFormComponent
     ],
     providers: [  ],
     bootstrap: [ AppComponent ]

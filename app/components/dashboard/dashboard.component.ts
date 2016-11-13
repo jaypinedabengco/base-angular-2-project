@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import {SampleObject} from './../../object_models/sample/sample';
+import {SampleObjectModel} from './../../object_models/sample/sample.object-model';
 
 @Component({
     moduleId: module.id,
@@ -11,7 +11,7 @@ import {SampleObject} from './../../object_models/sample/sample';
 
 export class DashboardComponent implements OnInit{
 
-    public sampleObjects: SampleObject[] = [];
+    public sampleObjects: SampleObjectModel[] = [];
 
     constructor(){}
 
