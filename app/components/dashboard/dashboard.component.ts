@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Hero} from './../../object_models/hero/hero';
-import {HeroService} from './../../services/hero.service';
+import {SampleObject} from './../../object_models/sample/sample';
 
 @Component({
     moduleId: module.id,
@@ -12,14 +11,11 @@ import {HeroService} from './../../services/hero.service';
 
 export class DashboardComponent implements OnInit{
 
-    public heroes: Hero[] = [];
+    public sampleObjects: SampleObject[] = [];
 
-    constructor(private heroService:HeroService){}
+    constructor(){}
 
     ngOnInit():void{
-        this.heroService.getHeroes().then(
-            result => this.heroes = result.slice(1,5) //top 4
-        )
     }
 
 
