@@ -26,8 +26,8 @@ var angular_in_memory_web_api_1 = require('angular-in-memory-web-api'); /*FOR DE
 var app_component_1 = require('./app.component');
 var hero_detail_component_1 = require('./components/hero-detail/hero-detail.component');
 var heroes_component_1 = require('./components/heroes/heroes.component');
-var dashboard_component_1 = require('./components/dashboard/dashboard.component');
 var hero_search_component_1 = require('./components/hero-search/hero-search.component');
+var dashboard_component_1 = require('./components/dashboard/dashboard.component');
 /**
  * Providers
 */

@@ -19,8 +19,8 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api'; /*FOR DEMO ONL
 import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroSearchComponent} from './components/hero-search/hero-search.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 /** 
  * Providers
