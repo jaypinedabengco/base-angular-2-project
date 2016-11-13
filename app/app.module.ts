@@ -1,3 +1,5 @@
+import './rxjs-extensions'; //RXJS extensions
+
 /**
  * Modules
  */
@@ -9,7 +11,7 @@ import { HttpModule }    from '@angular/http';
 /* internal modules*/
 import { AppRoutingModule } from './app-routing.module';
 // Imports for loading & configuring the in-memory web api
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api'; /*FOR DEMO ONLY*/
 
 /**
  * Components
@@ -18,12 +20,13 @@ import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HeroSearchComponent} from './components/hero-search/hero-search.component';
 
 /** 
  * Providers
 */
 import { HeroService } from './services/hero.service';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService }  from './in-memory-data.service'; /*FOR DEMO ONLY*/
 
 @NgModule({
     imports: [ 
@@ -37,6 +40,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
       AppComponent ,
       HeroDetailComponent,
       HeroesComponent, 
+      HeroSearchComponent, 
       DashboardComponent
     ],
     providers: [ HeroService ],

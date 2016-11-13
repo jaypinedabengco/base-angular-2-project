@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Response } from '@angular/http';
+import { Observable } from 'rxjs';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -68,6 +69,12 @@ export class HeroService {
             .toPromise()
             .then(() => null)
             .catch(this.handleError);
+    }
+
+    public search(term: string): Observable<Hero[]> {
+        return this.http
+                .get(`app/heroes/?name=${term}`)
+                .map((r: Response) => r.json().data as Hero[]);
     }
 
     private handleError(error: any): Promise<any> {

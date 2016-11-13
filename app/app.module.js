@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+require('./rxjs-extensions'); //RXJS extensions
 /**
  * Modules
  */
@@ -18,7 +19,7 @@ var http_1 = require('@angular/http');
 /* internal modules*/
 var app_routing_module_1 = require('./app-routing.module');
 // Imports for loading & configuring the in-memory web api
-var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
+var angular_in_memory_web_api_1 = require('angular-in-memory-web-api'); /*FOR DEMO ONLY*/
 /**
  * Components
 */
@@ -26,16 +27,17 @@ var app_component_1 = require('./app.component');
 var hero_detail_component_1 = require('./components/hero-detail/hero-detail.component');
 var heroes_component_1 = require('./components/heroes/heroes.component');
 var dashboard_component_1 = require('./components/dashboard/dashboard.component');
+var hero_search_component_1 = require('./components/hero-search/hero-search.component');
 /**
  * Providers
 */
 var hero_service_1 = require('./services/hero.service');
-var in_memory_data_service_1 = require('./in-memory-data.service');
+var in_memory_data_service_1 = require('./in-memory-data.service'); /*FOR DEMO ONLY*/
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        core_1.NgModule({
+        /*FOR DEMO ONLY*/ core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
@@ -47,6 +49,7 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 hero_detail_component_1.HeroDetailComponent,
                 heroes_component_1.HeroesComponent,
+                hero_search_component_1.HeroSearchComponent,
                 dashboard_component_1.DashboardComponent
             ],
             providers: [hero_service_1.HeroService],
