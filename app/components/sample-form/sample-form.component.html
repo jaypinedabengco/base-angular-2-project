@@ -48,21 +48,3 @@
 <div>lastname : {{formModel.lastname}}</div>
 <div>email : {{formModel.email}}</div>
 <div>selected country id : {{formModel.countryId}}</div>
-
-<h1>Sample ANgular Material</h1>
-<md-pagination [model]="countries" name="basic" [items-per-page-options]="[5, 10, 20]"></md-pagination>
-<md-data-table layout-fill>
-  <thead>
-  <tr>
-    <th class="md-text-cell">id</th>
-    <th>name</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let material of pagedMaterials">
-    <td class="md-text-cell">{{ material.name }}</td>
-    <td>{{ material.quantity }}</td>
-  </tr>
-  </tbody>
-</md-data-table>
-<md-pagination [model]="pagination" name="basic" (on-pagination-change)="detectChange($event)" [items-per-page-options]="availableLength"></md-pagination>
