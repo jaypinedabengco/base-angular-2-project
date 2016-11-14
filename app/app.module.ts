@@ -8,7 +8,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
-/* internal modules*/
+//material
+import { MaterialModule } from '@angular/material';
+
+//bootstrap
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+
+//internal modules
 import { AppRoutingModule } from './app-routing.module';
 
 /**
@@ -26,14 +32,20 @@ import { SampleFormComponent } from './components/sample-form/sample-form.compon
  * Providers
 */
 
-/*services*/
+//services
 import { SampleService } from './services/sampleService.service';
 
-/*daos*/
+//apis
 import { CountryApi } from './providers/api/studylane-api/impl/country.api';
 
 @NgModule({
     imports: [ 
+      //material
+      MaterialModule.forRoot(),
+
+      //bootstrap
+      AlertModule,
+
       BrowserModule,
       FormsModule,
       HttpModule, 

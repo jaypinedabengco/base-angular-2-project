@@ -1,50 +1,67 @@
-<header>
-    <h2>Sample Form</h2>
-</header>
-<form *ngIf="active" (ngSubmit)="onSubmit()" #sampleForm="ngForm">
-    <ul>
-        <li>
-            <label for="firstname">Firstname</label>
-            <input type="text" name="firstnme" id="firstname"
-                   [(ngModel)]="formModel.firstname"
-                   #firstname="ngModel" 
-                   required >
-            <div [hidden]="firstname.valid || firstname.pristine" class="alert alert-danger">
-                Firstname is required
-            </div>                   
-        </li>
-        <li>
-            <label for="lastname">Lastname</label>
-            <input type="text" name="lastname" id="lastname"
-                    [(ngModel)]="formModel.lastname" >
-        </li>        
-        <li>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" 
-                   [(ngModel)]="formModel.email"
-                   #email="ngModel"
-                   required >
-            <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
-                Email is required
-            </div>                     
-        </li>   
-        <li>
-            <label for="countryId">Country of Residence</label>
-            <select id="countryId" name="countryId" [(ngModel)]="formModel.countryId" required>
-                <option>--SELECT COUNTRY--</option>
-                <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
-            </select>
-        </li>         
-        <li>
-            <button type="submit" [disabled]="!sampleForm.form.valid">Submit</button>
-            <button type="button" (click)="resetForm()">Reset</button>
-        </li>     
-    </ul>
-</form>
 
-<h2>Debugger</h2>
-{{diagnostic}}
-<div>firstname : {{formModel.firstname}}</div>
-<div>lastname : {{formModel.lastname}}</div>
-<div>email : {{formModel.email}}</div>
-<div>selected country id : {{formModel.countryId}}</div>
+<div class="row sample-form-wrapper">
+    <md-card class="demo-card demo-basic col-md-6">
+    <md-toolbar color="primary">Basic</md-toolbar>
+    <md-card-content>
+        <form *ngIf="active" (ngSubmit)="onSubmit()" #sampleForm="ngForm">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <md-input placeholder="Firstname"
+                        name="firstname"
+                        [(ngModel)]="formModel.firstname"
+                        #firstname="ngModel" 
+                        required>
+                    </md-input>
+                    <div [hidden]="firstname.valid || firstname.pristine" class="alert alert-danger">
+                        Firstname is required
+                    </div>                  
+                </div>
+                <div class="col-md-6">
+                    <md-input placeholder="Lastname"
+                        name="lastname"
+                        [(ngModel)]="formModel.lastname">
+                    </md-input>             
+                </div>            
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <md-input placeholder="Email"
+                        name="email"
+                        [(ngModel)]="formModel.email"
+                        #email="ngModel" 
+                        required>
+                    </md-input>
+                    <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                        Email is required
+                    </div>                  
+                </div>
+                <div class="col-md-6">
+                    <label for="countryId">Country of Residence</label>
+                    <select id="countryId" name="countryId" [(ngModel)]="formModel.countryId" required>
+                        <option>--SELECT COUNTRY--</option>
+                        <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+                    </select>        
+                </div>
+            </div>    
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary" [disabled]="!sampleForm.form.valid">Submit</button>
+                    <button type="button" class="btn btn-primary" (click)="resetForm()">Reset</button>
+                </div>
+            </div>    
+                    
+        </form>
+    </md-card-content>
+    </md-card>
+
+    <div class="col-md-12">
+        <h2>Debugger</h2>
+        {{diagnostic}}
+        <div>firstname : {{formModel.firstname}}</div>
+        <div>lastname : {{formModel.lastname}}</div>
+        <div>email : {{formModel.email}}</div>
+        <div>selected country id : {{formModel.countryId}}</div>    
+    </div>
+</div>

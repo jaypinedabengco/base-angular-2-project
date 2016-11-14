@@ -1,7 +1,8 @@
-.ng-valid[required], .ng-valid.required  {
-  border-left: 5px solid #42A948; /* green */
+.sample-form-wrapper {
+    padding: 20px;
 }
 
-.ng-invalid:not(form)  {
-  border-left: 5px solid #a94442; /* red */
+.sample-form-wrapper md-card-content {
+    padding: 10px;
+    border: 1px solid;
 }
