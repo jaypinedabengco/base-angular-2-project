@@ -36,7 +36,7 @@ export abstract class StudylaneApi {
 
         return this.http.post(_url, _data, _headers)
                     .toPromise()
-                    .then(response=> response.json().reference_data)
+                    .then(response => response.json().reference_data)
                     .catch(this.handleError)             
     }
 

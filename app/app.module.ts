@@ -8,6 +8,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
+import {MATERIAL_BROWSER_PROVIDERS, MATERIAL_NODE_PROVIDERS} from "ng2-material";
+
 /* internal modules*/
 import { AppRoutingModule } from './app-routing.module';
 
